@@ -1,4 +1,6 @@
-# Shizuku
+private static final IPackageManager # ShizukuIPackageManager PACKAGE_MANAGER = IPackageManager.Stub.asInterface(
+    new ShizukuBinderWrapper(SystemServiceHelper.getSystemService("package")));
+
 
 ## Background
 
@@ -23,7 +25,9 @@ First, we need to talk about how app use system APIs. For example, if the app wa
 
 Android uses `binder` to do this type of IPC. `Binder` allows the server-side to learn the uid and pid of the client-side, so that the system server can check if the app has the permission to do the operation.
 
-Usually, if there is a "manager" (e.g., `PackageManager`) for apps to use, there should be a "service" (e.g., `PackageManagerService`) in the system server process. We can simply think if the app holds the `binder` of the "service", it can communicate with the "service". The app process will receive binders of system services on start.
+
+ 
+ Usually, if there is a "manager" (e.g., `PackageManager`) for apps to use, there should be a "service" (e.g., `PackageManagerService`) in the system server process. We can simply think if the app holds the `binder` of the "service", it can communicate with the "service". The app process will receive binders of system services on start.
 
 Shizuku guides users to run a process, Shizuku server, with root or ADB first. When the app starts, the `binder` to Shizuku server will also be sent to the app.
 
