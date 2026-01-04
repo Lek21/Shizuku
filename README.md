@@ -15,7 +15,7 @@ Shizuku uses a completely different way. See detailed description below.
 
 ## User guide & Download
 
-<https://shizuku.rikka.app/>
+<https://shizuku.rikka.app/>adb shell /data/app/~~gsoTpwDBnF5dj8oeBucgJA==/moe.shizuku.privileged.api-NlXqnOJFAobhSarlyGyPjw==/lib/arm64/libshizuku.so
 
 ## How does Shizuku work?
 
